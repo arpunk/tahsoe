@@ -1,0 +1,79 @@
+* FS
+
+**  Commands
+
+  From other libs
+
+  - get
+  - put
+  - mkdir
+  - list
+  - upload
+  - attach
+  - del
+
+  From FUSE:
+
+  - getattr
+  - open
+  - create
+  - unlink
+  - read
+  - write
+  - flush
+  - readdir
+  - readdir_callback
+  - mkdir
+  - rmdir
+  - statfs
+  - tahoe_init
+  - tahoe_destroy
+  - default_root_cap
+
+* Operation
+
+  1. Open a handler to the root CAP URI (authenticated or not)
+  2. Apply a command to the opened handler
+  3. Translate response from JSON
+
+* Types
+
+** Connection
+   - Host
+   - Port
+   - HTTP Client (?)
+   - Maybe User
+   - Maybe Pass
+
+** Filesystem
+   - url
+     * Without trailing slash
+
+** Directory
+   - mutable
+   - writable
+   - children
+   - filesystem
+   - uri
+   - data
+
+** File
+   - mutable
+   - writable
+   - request
+   - uri
+   - directory
+   - data
+
+* Funciones
+
+  - createDirectory :: Filesystem -> Maybe d -> Directory
+  - createFile :: Directory -> Maybe d -> File
+
+  - createObject :: URI -> Maybe d -> Maybe (Either Directory File)
+
+  - upload :: Directory -> File -> ()
+  - attach :: Either Directory File -> File -> ()
+  - put :: Either Directory File -> String (content type) -> File -> ()
+  - mkdir :: Either Directory File -> ()
+  - del :: Either Directory File -> ()

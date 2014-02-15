@@ -1,0 +1,5 @@
+* Intro
+
+TAHOE-LAFS bindings for Haskell.
+
+NOTE: Currently does not work, it was a beer-night for sketching a PoC.

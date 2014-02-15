@@ -1,0 +1,67 @@
+name:                tahsoe 
+version:             0.0.0.1
+synopsis:            TAHOE-LAFS API Bindings
+description:         TAHOE-LAFS API Bindings
+license:             GPL-3
+license-file:        LICENSE
+author:              Ricardo Lanziano <arpunk@cryptolab.net> 
+maintainer:          Ricardo Lanziano <arpunk@cryptolab.net>
+category:            Network
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  ghc-options:         -Wall
+  extensions:          OverloadedStrings
+                       DeriveDataTypeable
+                       FlexibleContexts
+                       TemplateHaskell
+                       RankNTypes
+                       PatternGuards
+
+  hs-source-dirs:      src
+  exposed-modules:     Network.TAHOE
+                       Network.TAHOE.Monad
+                       Network.TAHOE.Types
+                       Network.TAHOE.HTTP
+  
+  build-depends:       base > 4
+                     , bytestring
+                     , text
+                     , mtl
+                     , transformers
+                     , transformers-base
+                     , aeson
+                     , http-conduit
+                     , http-types
+                     , resourcet
+                     , conduit
+                     , parsec
+                     , time
+                     , data-default
+                     , monad-control
+                     , monad-logger
+                     , lifted-base
+
+executable tahsoe
+  hs-source-dirs:      src
+  main-is:             Main.hs 
+  -- other-modules:       
+  build-depends:       base > 4
+                     , tahsoe
+                     , bytestring
+                     , text
+                     , mtl
+                     , transformers
+                     , transformers-base
+                     , aeson
+                     , http-conduit
+                     , http-types
+                     , resourcet
+                     , conduit
+                     , parsec
+                     , time
+                     , data-default
+                     , monad-control
+                     , monad-logger
+                     , lifted-base
